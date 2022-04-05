@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="animerch.list">
+      <field name="name">animerch list</field>
+      <field name="model">animerch.animerch</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="animerch.action_window">
+      <field name="name">animerch window</field>
+      <field name="res_model">animerch.animerch</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="animerch.action_server">
+      <field name="name">animerch server</field>
+      <field name="model_id" ref="model_animerch_animerch"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="animerch" id="animerch.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="animerch.menu_1" parent="animerch.menu_root"/>
+    <menuitem name="Menu 2" id="animerch.menu_2" parent="animerch.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="animerch.menu_1_list" parent="animerch.menu_1"
+              action="animerch.action_window"/>
+    <menuitem name="Server to list" id="animerch" parent="animerch.menu_2"
+              action="animerch.action_server"/>
+-->
+  </data>
+</odoo>

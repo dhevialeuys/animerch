@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- animerch.actionfigure tree view -->
+    <record id="animerch_actionfigure_view_tree" model="ir.ui.view">
+        <field name="name">Product</field>
+        <field name="model">animerch.actionfigure</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="material"/>
+                <field name="stock"/>
+                <field name="price"/>
+                <field name="img" widget = "image"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- animerch.actionfigure form view -->
+    <record id="animerch_actionfiguree_view_form" model="ir.ui.view">
+        <field name="name">Add Product</field>
+        <field name="model">animerch.actionfigure</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="material"/>
+                        <field name="features"/>
+                        <field name="size"/>
+                        <field name="stock"/>
+                        <field name="price"/>
+                        <field name="descript"/>
+                        <field name="img" widget = "image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- animerch.actionfigure action window -->
+    <record id="animerch_actionfigure_action" model="ir.actions.act_window">
+        <field name="name">List of The Action Figure</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">animerch.actionfigure</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="animerch_actionfigure_menu_act"
+        name="Action Figure"
+        parent="animerch_category_menu_categ"
+        action="animerch_actionfigure_action"
+        sequence="10"/>
+
+</odoo>

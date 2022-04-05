@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_animerch_actionfigure,animerch.actionfigure,model_animerch_actionfigure,,1,1,1,1
+access_animerch_accessories,animerch.accessories,model_animerch_accessories,,1,1,1,1
+access_animerch_poster,animerch.poster,model_animerch_poster,,1,1,1,1

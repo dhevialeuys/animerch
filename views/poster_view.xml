@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- animerch.poster tree view -->
+    <record id="animerch_poster_view_tree" model="ir.ui.view">
+        <field name="name">Product</field>
+        <field name="model">animerch.poster</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="material"/>
+                <field name="stock"/>
+                <field name="price"/>
+                <field name="img" widget = "image"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- animerch.poster form view -->
+    <record id="animerch_postere_view_form" model="ir.ui.view">
+        <field name="name">Add Product</field>
+        <field name="model">animerch.poster</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="material"/>
+                        <field name="size"/>
+                        <field name="stock"/>
+                        <field name="price"/>
+                        <field name="descript"/>
+                        <field name="img" widget = "image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- animerch.poster action window -->
+    <record id="animerch_poster_action" model="ir.actions.act_window">
+        <field name="name">List of The Action Figure</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">animerch.poster</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="animerch_poster_menu_act"
+        name="Poster"
+        parent="animerch_category_menu_categ"
+        action="animerch_poster_action"
+        sequence="30"/>
+
+</odoo>
