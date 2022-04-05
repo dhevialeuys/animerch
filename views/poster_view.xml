@@ -41,7 +41,7 @@
 
     <!-- animerch.poster action window -->
     <record id="animerch_poster_action" model="ir.actions.act_window">
-        <field name="name">List of The Action Figure</field>
+        <field name="name">List of The Anime's Poster</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">animerch.poster</field>
         <field name="view_mode">tree,form</field>

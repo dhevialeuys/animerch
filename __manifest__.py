@@ -32,6 +32,8 @@
         'views/actionfigure_view.xml',
         'views/accessories_view.xml',
         'views/poster_view.xml',
+        'views/customer_view.xml',
+        'views/order_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

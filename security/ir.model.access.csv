@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_animerch_actionfigure,animerch.actionfigure,model_animerch_actionfigure,,1,1,1,1
-access_animerch_accessories,animerch.accessories,model_animerch_accessories,,1,1,1,1
-access_animerch_poster,animerch.poster,model_animerch_poster,,1,1,1,1
+access_animerch_actionfigure,access.animerch.actionfigure,model_animerch_actionfigure,,1,1,1,1
+access_animerch_accessories,access.animerch.accessories,model_animerch_accessories,,1,1,1,1
+access_animerch_poster,access.animerch.poster,model_animerch_poster,,1,1,1,1
+access_animerch_order,access.animerch.order,model_animerch_order,,1,1,1,1
+access_animerch_orderactiondetail,access.animerch.orderactiondetail,model_animerch_orderactiondetail,,1,1,1,1
+access_animerch_orderaccdetail,access.animerch.orderaccdetail,model_animerch_orderaccdetail,,1,1,1,1
+access_animerch_orderposterdetail,access.animerch.orderposterdetail,model_animerch_orderposterdetail,,1,1,1,1
