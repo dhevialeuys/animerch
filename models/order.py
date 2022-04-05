@@ -29,7 +29,7 @@ class Order(models.Model):
         comodel_name='res.partner',
         string='Buyer',
         domain=[('the_customer', '=', True)], store = True)
-    total = fields.Char(compute='_compute_total', string='Total', store = True)
+    total = fields.Integer(compute='_compute_total', string='Total', store = True)
     
     @api.depends('orderactiondetail_ids', 'orderaccdetail_ids', 'orderposterdetail_ids')
     def _compute_total(self):
@@ -72,12 +72,12 @@ class OrderActionDetail(models.Model):
         for record in self:
             record.price = record.unit_price * record.qty
     
-    #@api.model
-    #def create(self, vals):
-    #    record = super(OrderActionDetail, self).create(vals)
-    #    if record.qty:
-    #        self.env['animerch.actionfigure'].search([('id', '=', record.action_id.id)]).write({'stock':record.action_id.stock-record.qty})
-    #        return record
+    @api.model
+    def create(self, vals):
+        record = super(OrderActionDetail, self).create(vals)
+        if record.qty:
+            self.env['animerch.actionfigure'].search([('id', '=', record.action_id.id)]).write({'stock':record.action_id.stock-record.qty})
+            return record
 
 
 class OrderAccDetail(models.Model):
@@ -111,12 +111,12 @@ class OrderAccDetail(models.Model):
         for record in self:
             record.price = record.unit_price * record.qty
     
-    #@api.model
-    #def create(self, vals):
-    #    record = super(OrderAccDetail, self).create(vals)
-    #    if record.qty:
-    #        self.env['animerch.accessories'].search([('id', '=', record.acc_id.id)]).write({'stock':record.acc_id.stock-record.qty})
-    #        return record
+    @api.model
+    def create(self, vals):
+        record = super(OrderAccDetail, self).create(vals)
+        if record.qty:
+            self.env['animerch.accessories'].search([('id', '=', record.acc_id.id)]).write({'stock':record.acc_id.stock-record.qty})
+            return record
 
 class OrderPosterDetail(models.Model):
     _name = 'animerch.orderposterdetail'
@@ -146,9 +146,9 @@ class OrderPosterDetail(models.Model):
         for record in self:
             record.price = record.unit_price * record.qty
     
-    #@api.model
-    #def create(self, vals):
-    #    record = super(OrderPosterDetail, self).create(vals)
-    #    if record.qty:
-    #        self.env['animerch.poster'].search([('id', '=', record.poster_id.id)]).write({'stock':record.poster_id.stock-record.qty})
-    #        return record
+    @api.model
+    def create(self, vals):
+        record = super(OrderPosterDetail, self).create(vals)
+        if record.qty:
+            self.env['animerch.poster'].search([('id', '=', record.poster_id.id)]).write({'stock':record.poster_id.stock-record.qty})
+            return record
