@@ -7,6 +7,9 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
+                <header>
+                    <button string="Create Invoice" name="invoice" type="object" class="oe_highlight"/>
+                </header>
                 <field name="name"/>
                 <field name="buyer"/>
                 <field name="order_date"/>
@@ -15,12 +18,13 @@
                 <field name="orderactiondetail_ids"/>
                 <field name="orderaccdetail_ids"/>
                 <field name="orderposterdetail_ids"/>
+                <field name="accounting"/>
             </tree>
         </field>
     </record>
 
     <!-- animerch.order form view -->
-    <record id="model_name_view_form" model="ir.ui.view">
+    <record id="animerch_order_view_form" model="ir.ui.view">
         <field name="name">Form Orders</field>
         <field name="model">animerch.order</field>
         <field name="arch" type="xml">

@@ -39,6 +39,22 @@ class Order(models.Model):
             c = sum(self.env['animerch.orderposterdetail'].search([('orderposter_id', '=', record.id)]).mapped('price'))
             record.total = a + b + c  
 
+    accounting = fields.Boolean(string='Already Paid', default=False)
+    def invoice(self):
+        invoices = self.env['account.move'].create({
+            'move_type' : 'out_invoice',
+            'partner_id' : self.buyer,
+            'invoice_date' : self.order_date,
+            'invoice_line_ids' : [(0, 0, {
+                'product_id' : 0,
+                'quantity' : 1,
+                'price_unit' : self.total,
+                'price_subtotal' : self.total,
+            })]
+        })
+        self.accounting = True
+        return invoices
+
 class OrderActionDetail(models.Model):
     _name = 'animerch.orderactiondetail'
     _description = 'New Description'
